@@ -28,21 +28,13 @@
 #endif
 
 #define CONFIG_MFG_ENV_SETTINGS_DEFAULT \
-	"mfgtool_args=setenv bootargs console=${console},${baudrate} " \
+	"mfgtool_args=setenv bootargs console=console=ttymxc0,115200 " \
 		"rdinit=/linuxrc " \
 		"clk_ignore_unused "\
 		"\0" \
 	"kboot="MFG_BOOT_CMD"\0"\
 	"bootcmd_mfg=run mfgtool_args;" \
-        "if iminfo ${initrd_addr}; then " \
-            "if test ${tee} = yes; then " \
-                "bootm ${tee_addr} ${initrd_addr} ${fdt_addr}; " \
-            "else " \
-                MFG_BOOT_CMD "${loadaddr} ${initrd_addr} ${fdt_addr}; " \
-            "fi; " \
-        "else " \
-		FASTBOOT_CMD  \
-        "fi;\0" \
-	MFG_NAND_FIT_PARTITION \
+        MFG_BOOT_CMD "${loadaddr} ${initrd_addr} ${fdt_addr}; " \
+      	MFG_NAND_FIT_PARTITION \
 
 #endif

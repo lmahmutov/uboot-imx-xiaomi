@@ -360,7 +360,7 @@ int checkboard(void)
 	else if (is_cpu_type(MXC_CPU_MX6ULZ))
 		puts("Board: MX6ULZ 14x14 EVK\n");
 	else
-		puts("Board: MX6ULL 14x14 EVK\n");
+		puts("Board: Lumi Gateway\n");
 
 	return 0;
 }
