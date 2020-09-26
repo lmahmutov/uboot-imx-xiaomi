@@ -22,14 +22,10 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 ### Clone u-boot from github and buid: / Клонируем u-boot с github и собираем
+
 ```console
 $ git clone https://github.com/lmahmutov/uboot-imx-xiaomi.git
 $ cd uboot-imx-xiaomi/
-$ make u-boot.imx  ARCH=arm CROSS_COMPILE=${CC}
-```
-
-### You can configure it as you want: / При желании можете настроить его как хотите
-```console
 $ make ARCH=arm CROSS_COMPILE=${CC} distclean
 $ make ARCH=arm CROSS_COMPILE=${CC} Xiaomi_defconfig
 $ make menuconfig
